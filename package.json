@@ -39,5 +39,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@cypress/react": "^5.2.0",
+    "@cypress/webpack-dev-server": "^1.1.0",
+    "cypress": "^6.8.0"
   }
 }
