@@ -2,13 +2,13 @@ As of Cypress 7.0, the new Component Testing runner is now bundled with the Cypr
 
 In this blog post we will see how to set up Cypress Component Testing in a new React app created via Create React App using TypeScript.
 
+You can get the source code for the example used in the blog post [here](https://github.com/lmiller1990/cypress-react-template).
+
 ## Creating a new React Project
 
 Create a new React project to get started. Optionally add TypeScript - I'll be using it in this example.
 
 ```sh
-npx create-react-app cypress-test-react --template typescript
-# or
 yarn create react-app cypress-test-react --template typescript
 ```
 
@@ -23,17 +23,17 @@ You can set up everyting manually. If you want to use a generator, skip to the n
 Create React App projects are Webpack based; that's why we are installing the relevant Webpack adapter. You will also want the absolute latest version of `@cypress/react`, which ships the new dev server architecture, so make sure to install it using `@next`.
 
 ```sh
-yarn add cypress @cypress/react@next @cypress/webpack-dev-server --dev
-# or 
-npm install cypress @cypress/react@next @cypress/webpack-dev-server --dev
+yarn add cypress @cypress/react @cypress/webpack-dev-server --dev
 ```
 
 Next, create a `cypress.json` with some basic configuration:
 
 ```
 {
-  "testFiles": "**/*.test.{js,ts,jsx,tsx}",
-  "componentFolder": "src"
+  "component": {
+    "testFiles": "**/*.test.{js,ts,jsx,tsx}",
+    "componentFolder": "src"
+  }
 }
 ```
 
@@ -46,6 +46,7 @@ const injectDevServer = require("@cypress/react/plugins/react-scripts")
 
 module.exports = (on, config) => {
   injectDevServer(on, config)
+  return config
 }
 ```
 
@@ -53,35 +54,6 @@ module.exports = (on, config) => {
 This will configure the Cypress Webpack Dev Server to use the same Webpack configuration as Create React App uses.
 
 If you are using a different template, like Next.js, we have some other [adapters available](https://github.com/cypress-io/cypress/tree/develop/npm/react/plugins). It's also possible to create your own adapter.
-
-## Generating Configuration
-
-If you just want to get started, the above can be accomplished without a single line of code. Instead, use the Cypress Create Tests generator.
-
-```sh
-yarn create cypress-tests
-
-# or npm
-npx create-cypress-tests
-```
-
-You are prompted with "Do you want to setup component testing?". Answer yes!
-
-The next question asks for your template. Select `vue-cli`. There are a number of other adapters to use. At the time of this post, the Webpack adapter is the most mature and stable.
-
-The final question asks where you'd like to place your spec files. I like to use `src`, so my specs are near the relevant components.
-
-The wizard created a number of files for you. The most interesting is `cypress/plugins/index.js`:
-
-```js
-const injectDevServer = require("@cypress/react/plugins/react-scripts")
-
-module.exports = (on, config) => {
-  injectDevServer(on, config)
-}
-```
-
-This is the same code we wrote manually in the previous section. It tells Cypress to use the same Webpack configuration as Create React App for the dev server used in the component testing runner.
 
 ## Writing Some Tests
 
@@ -110,6 +82,8 @@ And select the spec to run.
 
 ![](https://raw.githubusercontent.com/lmiller1990/cypress-react-template/master/cy-react.png)
 
+Try making a change - the tests will re-run instantly. You not only immediately know if the test passed or failed, but be able to visually inspect and debug any changes.
+
 You can run all the specs with `yarn cypress run-ct`. This is useful for executing all the specs in a CI environment, or one last check before you commit and push your code!
 
 ## Discussion
@@ -126,8 +100,8 @@ Cypress Component Testing is still in alpha but the product is quickly evolving 
 
 ## Conclusion
 
-Cypress Component Testing brings everything that is great about Cypress to Component Testing. Since the underlying adapters are built on libraries like Webpack and Vue Test Utils, you don't need to throw away your entire test suite - incrementally migration is more than possible. 
+Cypress Component Testing brings everything that is great about Cypress to Component Testing. Since the underlying adapters are built on libraries like Webpack, you don't need to throw away your entire test suite - incremental migration is more than possible. 
 
 The visual aspect united testing and design in a single tool. My days of grepping a messy console output to figure out what the user will see are over - I can see exactly what the component will look like as my tests run.
 
-You can get the source code for the blog post [here]().
+You can get the source code for the blog post [here](https://github.com/lmiller1990/cypress-react-template).
