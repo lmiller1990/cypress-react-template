@@ -42,7 +42,7 @@
   },
   "devDependencies": {
     "@cypress/react": "^5.2.0",
-    "@cypress/webpack-dev-server": "^1.1.0",
-    "cypress": "^6.8.0"
+    "@cypress/webpack-dev-server": "^1.1.1",
+    "cypress": "^7.0.0"
   }
 }
