@@ -24,7 +24,7 @@ yarn add cypress @cypress/react @cypress/webpack-dev-server --dev
 
 Next, create a `cypress.json` with some basic configuration:
 
-```
+```json
 {
   "component": {
     "testFiles": "**/*.test.{js,ts,jsx,tsx}",
@@ -37,7 +37,7 @@ Here we are adding some Component Testing specific options, hence the `"componen
 
 The last thing we need to is tell Cypress to use `@cypress/webpack-dev-server` for component tests. Plugins are explained in detail in the [Cypress documentation](https://docs.cypress.io/guides/tooling/plugins-guide#Installing-plugins). By default plugins are loaded from `cypress/plugins/index.js`. Create that file and add:
 
-```
+```js
 const injectDevServer = require("@cypress/react/plugins/react-scripts")
 
 module.exports = (on, config) => {
@@ -55,7 +55,7 @@ If you are using a different template, like Next.js, we have some other [adapter
 
 Let's migrate `src/App.test.tsx`, which comes with the Create React App template, to use Cypress. It's a simple migration:
 
-```
+```tsx
 import React from 'react';
 import { mount } from '@cypress/react';
 import App from './App';
@@ -70,7 +70,7 @@ Most tests will start with `mount` from `@cypress/react`. This is similar to `re
 
 Open the component testing runner with:
 
-```
+```sh
 yarn cypress open-ct
 ```
 
