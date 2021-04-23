@@ -23,3 +23,4 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: yarn install
     - run: yarn cypress run-ct --record --key f23ae75a-f00c-422e-aab4-7454cb9469e9
+    - run: yarn cypress run --record --key f23ae75a-f00c-422e-aab4-7454cb9469e9
