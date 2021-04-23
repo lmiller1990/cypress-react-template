@@ -1,15 +1,25 @@
-name: Cypress Tests
+name: CI
 
-on: [push]
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
 jobs:
-  cypress-run:
+  build:
+
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Test
-        uses: cypress-io/github-action@v2
-        with:
-          install: yarn install
-          run: yarn cypress run-ct --record --key f23ae75a-f00c-422e-aab4-7454cb9469e9
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: yarn install
+    - run: yarn cypress run-ct --record --key f23ae75a-f00c-422e-aab4-7454cb9469e9
