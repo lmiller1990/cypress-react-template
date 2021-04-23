@@ -1,0 +1,28 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:14.16.1
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+          - node-14-dependencies-{{ checksum "package.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - node-14-dependencies-
+
+      - run: yarn install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: node-14-dependencies-{{ checksum "package.json" }}
+
+      # run tests!
+      - run: yarn cypress run-ct --record --key f23ae75a-f00c-422e-aab4-7454cb9469e9
+      - run: yarn cypress run --record --key f23ae75a-f00c-422e-aab4-7454cb9469e9
