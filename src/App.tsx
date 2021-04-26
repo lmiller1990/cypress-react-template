@@ -2,9 +2,18 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+function foo() {
+  return 'foo'
+}
+
+function bar() {
+  return 'bar'
+}
+
 function App() {
   return (
     <div className="App">
+    <h1>{bar()}</h1>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
