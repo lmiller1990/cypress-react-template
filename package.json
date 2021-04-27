@@ -42,10 +42,10 @@
   },
   "devDependencies": {
     "@cypress/code-coverage": "^3.9.4",
-    "@cypress/react": "^5.3.4",
-    "@cypress/webpack-dev-server": "^1.1.4",
+    "@cypress/react": "^5.4.0",
+    "@cypress/webpack-dev-server": "^1.1.5",
     "babel-plugin-istanbul": "^6.0.0",
-    "cypress": "^7.1.0",
+    "cypress": "^7.2.0",
     "html-webpack-plugin": "4"
   }
 }

@@ -1347,17 +1347,17 @@
     date-fns "^1.27.2"
     figures "^1.7.0"
 
-"@cypress/mount-utils@1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@cypress/mount-utils/-/mount-utils-1.0.0.tgz#9cb57596d155d7dc9ef523177f92605cbf836d1c"
-  integrity sha512-wDhSRzSGYSUCvMlE0E1qIVxnMIXidW10iITGREDbgUdMrERZiPtEP728vl67QE6s6K+8DM7a1SXzh2jIoyuRIw==
+"@cypress/mount-utils@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@cypress/mount-utils/-/mount-utils-1.0.1.tgz#04a3b9c73add3daf2f0ba38a610dc49de9e8a252"
+  integrity sha512-mfY3W/5gJpXEgONguawAeTdI0n2wNvM0oW1aP4UyYLkTK6RhSS+95CU2tvW3RNuA3xJzpfOCDODtOgLBZI4obg==
 
-"@cypress/react@^5.3.4":
-  version "5.3.4"
-  resolved "https://registry.yarnpkg.com/@cypress/react/-/react-5.3.4.tgz#86f77d1952dd395e7c8c38a0b96d1b3fe8f0ea6c"
-  integrity sha512-w6IRiELFJBaGyMkZXJ/59Mkfghore52t9Ock/ZJBckmjutEoc9rZ6pCxno8knOIlnHtohteGZd+KVs9DIUiHVw==
+"@cypress/react@^5.4.0":
+  version "5.4.0"
+  resolved "https://registry.yarnpkg.com/@cypress/react/-/react-5.4.0.tgz#4008e64c7b3970961b13d8ff1315b2592139e351"
+  integrity sha512-/pFtT1IojtchMFWswlZUbtqgjGcnp47PlS5MS3xf/eAPNUv7fGOTlw3+C++GSa+3nW30yFgIaF09y6eI9VbQ2w==
   dependencies:
-    "@cypress/mount-utils" "1.0.0"
+    "@cypress/mount-utils" "1.0.1"
     "@cypress/webpack-preprocessor" "5.7.0"
     debug "4.3.2"
     find-webpack "2.2.1"
@@ -1389,13 +1389,12 @@
     tunnel-agent "^0.6.0"
     uuid "^3.3.2"
 
-"@cypress/webpack-dev-server@^1.1.4":
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/@cypress/webpack-dev-server/-/webpack-dev-server-1.1.4.tgz#c2d3b9d9417f0c2fb1b817a83b9ffdd24786da74"
-  integrity sha512-bDmDV5rJ+7wvc5YnKriWxVjhqndzddvLCjzqEqzUhm4+85acq0h51QGcLcJNcCJY/6yoidgz20ae8hEJk4jbKQ==
+"@cypress/webpack-dev-server@^1.1.5":
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/@cypress/webpack-dev-server/-/webpack-dev-server-1.1.5.tgz#0dfdd1d8572e4ea9dc0a51d0fc79ff9c680d7500"
+  integrity sha512-V8SOF8AcwIWBm4+09E+JHJ7r8CorBkwgJ6TZF8n2OAOuj00CtTetfJtdAqpuGr+0Jeqc8kUXPOVbug0nzrNJ8A==
   dependencies:
     debug "4.3.2"
-    html-webpack-plugin "^4.0.0"
     semver "^7.3.4"
     webpack-merge "^5.4.0"
 
@@ -4530,10 +4529,10 @@ cyclist@^1.0.1:
   resolved "https://registry.yarnpkg.com/cyclist/-/cyclist-1.0.1.tgz#596e9698fd0c80e12038c2b82d6eb1b35b6224d9"
   integrity sha1-WW6WmP0MgOEgOMK4LW6xs1tiJNk=
 
-cypress@^7.1.0:
-  version "7.1.0"
-  resolved "https://registry.yarnpkg.com/cypress/-/cypress-7.1.0.tgz#6cb5dc22c6271a9d7a79a2477251a95afc77e531"
-  integrity sha512-AptQP9fVtN/FfOv8rJ9hTGJE2XQFc8saLHT38r/EeyWhzp0q/+P/DYRTDtjGZHeLTCNznAUrT4lal8jm+ouS7Q==
+cypress@^7.2.0:
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/cypress/-/cypress-7.2.0.tgz#6a3364e18972f898fff1fb12c1ff747939e45ddc"
+  integrity sha512-lHHGay+YsffDn4M0bkkwezylBVHUpwwhtqte4LNPrFRCHy77X38+1PUe3neFb3glVTM+rbILtTN6FhO2djcOuQ==
   dependencies:
     "@cypress/listr-verbose-renderer" "^0.4.1"
     "@cypress/request" "^2.88.5"
@@ -6444,7 +6443,7 @@ html-minifier-terser@^5.0.1:
     relateurl "^0.2.7"
     terser "^4.6.3"
 
-html-webpack-plugin@4, html-webpack-plugin@^4.0.0:
+html-webpack-plugin@4:
   version "4.5.2"
   resolved "https://registry.yarnpkg.com/html-webpack-plugin/-/html-webpack-plugin-4.5.2.tgz#76fc83fa1a0f12dd5f7da0404a54e2699666bc12"
   integrity sha512-q5oYdzjKUIPQVjOosjgvCHQOv9Ett9CYYHlgvJeXG0qQvdSojnBq4vAdQBwn1+yGveAwHCoe/rMR86ozX3+c2A==
