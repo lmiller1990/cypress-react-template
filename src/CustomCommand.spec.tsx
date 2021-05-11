@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from '@cypress/react';
 
-xit('uses a custom command written in TypeScript', () => {
+it('uses a custom command written in TypeScript', () => {
   const Comp: React.FC = () => {
     const onClick = cy.stub()
     return (
