@@ -48,6 +48,7 @@
     "@types/lodash": "^4.14.168",
     "babel-plugin-istanbul": "^6.0.0",
     "cypress": "^7.3.0",
+    "cypress-react-selector": "^2.3.7",
     "html-webpack-plugin": "4"
   }
 }
