@@ -15,6 +15,16 @@ jobs:
       matrix:
         node-version: [14.x]
 
+    # steps:
+    # - uses: actions/checkout@v2
+    # - name: Use Node.js ${{ matrix.node-version }}
+    #   uses: actions/setup-node@v1
+    #   with:
+    #     node-version: ${{ matrix.node-version }}
+    # - run: yarn install
+    # - run: yarn cypress run-ct --record --key f23ae75a-f00c-422e-aab4-7454cb9469e9
+    # - run: yarn cypress run --record --key f23ae75a-f00c-422e-aab4-7454cb9469e9
+
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
@@ -22,5 +32,5 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: yarn install
-    - run: yarn cypress run-ct --record --key f23ae75a-f00c-422e-aab4-7454cb9469e9
-    - run: yarn cypress run --record --key f23ae75a-f00c-422e-aab4-7454cb9469e9
+    - run: node run-ct.js
+
